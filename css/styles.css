@@ -1,0 +1,68 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+	font-family: 'Lora', serif;
+}
+h1 {
+	font-size: 48px;
+}
+img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+	-webkit-transition: opacity .3s linear;
+	transition: opacity .3s linear;
+}
+p {
+	margin-bottom: 30px;
+	line-height: 1.8;
+	font-size: 17px;
+}
+figure {
+	margin: 0;
+	position: relative;
+	background-color: #ccc;
+	margin-bottom: 60px;
+}
+figure canvas {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100% !important;
+	height: auto !important;
+	opacity: 0;
+	visibility: hidden;
+	-webkit-transition: opacity .3s linear, visibility .1s;
+	transition: opacity .3s linear, visibility .1s;
+}
+
+.demo-content {
+	width: 600px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.img-small {
+	visibility: hidden;
+}
+.img-blur {
+	visibility: visible;
+	opacity: 1;
+}
+.img-large {
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+}
+.img-large--display {
+	opacity: 1;
+}
