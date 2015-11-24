@@ -14,7 +14,7 @@
 				canvasElem = imgSmall.nextElementSibling;
 
 			// Blur the image.
-			blur.image( imgSmall, canvasElem, 5 );
+			blur.image( imgSmall, canvasElem, 6 );
 
 			// Additionally add class to the canvas element.
 			$( canvasElem ).addClass( 'img-blur is-blurred' );
