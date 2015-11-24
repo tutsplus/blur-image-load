@@ -37,7 +37,7 @@ mark {
   background-color: #dddddd;
 }
 .site-header {
-  background-color: #196e76;
+  background-color: #000;
   position: fixed;
   top: 0;
   width: 100%;
@@ -60,7 +60,7 @@ mark {
   font-weight: 300;
   display: block;
   text-decoration: none;
-  background-color: #10474c;
+  background-color: #F6B33C;
 }
 @media screen and (min-width: 630px) {
   body {
@@ -102,42 +102,6 @@ html {
 *:after {
   box-sizing: inherit;
 }
-h1 {
-  font-size: 48px;
-  line-height: 1.68;
-}
-h2 {
-  font-size: 31px;
-}
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-p {
-  font-size: 24px;
-  margin-bottom: 30px;
-  line-height: 1.68;
-  color: #555;
-}
-figure {
-  margin: 0;
-  position: relative;
-  margin-bottom: 30px;
-}
-figcaption {
-  color: #999;
-  margin-top: 10px;
-  font-size: 16px;
-}
-figure canvas {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100% !important;
-  height: auto !important;
-  opacity: 0;
-}
 .demo-content {
   max-width: 720px;
   margin-right: auto;
@@ -159,17 +123,53 @@ figure canvas {
   font-family: 'Redacted-regular', Verdana, Geneva, sans-serif;
   line-height: 1.68;
 }
-.img-small {
+.demo-content h1 {
+  font-size: 48px;
+  line-height: 1.68;
+}
+.demo-content h2 {
+  font-size: 31px;
+}
+.demo-content img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+.demo-content p {
+  font-size: 24px;
+  margin-bottom: 30px;
+  line-height: 1.68;
+  color: #555;
+}
+.demo-content figure {
+  margin: 0;
+  position: relative;
+  margin-bottom: 30px;
+}
+.demo-content figcaption {
+  color: #999;
+  margin-top: 10px;
+  font-size: 16px;
+}
+.demo-content figure canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: auto !important;
+  opacity: 0;
+}
+.demo-content .img-small {
   width: 100% !important;
   visibility: hidden;
 }
-.img-blur {
+.demo-content .img-blur {
   opacity: 1;
   -webkit-animation: fadeIn 0.8s ease-in-out forwards;
   -moz-animation: fadeIn 0.8s ease-in-out forwards;
   animation: fadeIn 0.8s ease-in-out forwards;
 }
-.img-large {
+.demo-content .img-large {
   position: absolute;
   top: 0;
   left: 0;
@@ -178,7 +178,7 @@ figure canvas {
   -moz-animation-delay: .6s;
   animation-delay: .6s;
 }
-.is-visible {
+.demo-content .is-visible {
   -webkit-animation: fadeIn 0.8s ease-in-out forwards;
   -moz-animation: fadeIn 0.8s ease-in-out forwards;
   animation: fadeIn 0.8s ease-in-out forwards;

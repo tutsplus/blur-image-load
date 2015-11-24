@@ -42,9 +42,9 @@
 
 							/**
 							 * Assign class names.
+							 * 
 							 * If the image is visible in the viewport,
 							 * add the 'is-visible' class to apply the fadeIn transition.
-							 *
 							 * Otherwise, just add 'is-loaded' and hold the transition later.
 							 */
 							var className = ( $( figureElem ).visible( true ) ) ? 'is-loaded is-visible' : 'is-loaded';
