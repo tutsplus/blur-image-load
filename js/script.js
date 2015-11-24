@@ -2,7 +2,7 @@
 
 	$( '#content' )
 		.imagesLoaded()
-		.progress( function( instance, image ) { // Triggered after each image has been loaded.
+		.progress( function( instance, image ) { // Triggered after each small image has been loaded.
 
 			// Abort early if the image is not loaded.
 			if ( false === image.isLoaded ) {
@@ -32,8 +32,8 @@
 				})
 				.on( 'load', function() { // Once the image is loaded.
 
-					var thisImg   = $( this ),
-							figureElem = $( imgSmall.parentElement );
+					var thisImg    = $( this ),
+						figureElem = $( imgSmall.parentElement );
 
 					// Insert the large image after the <canvas> element.
 					thisImg
