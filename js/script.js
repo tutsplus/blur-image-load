@@ -54,7 +54,7 @@
 			var images = instance.images;
 
 			$.each( images, function( index, image ) {
-				$( window ).on( 'scroll', function() {		
+				$( window ).on( 'scroll', function() {
 					
 					var imgSmall = image.img,
 				
