@@ -3,68 +3,95 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="description" content="Lazy load image ">
+	<meta name="description" content="Lazy load image with blurry effect as seen on Medium">
 
-	<title>Blur Lazy Load (as seen on Medium)</title>
-	
-	<link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+	<title>Blur Image Lazy Load (as seen on Medium)</title>
+
 	<link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+	
+	<header class="site-header cf">
+        <h1>Blur Image Lazy Load</h1>
+        <a class="back-to-article" href="">Back to the Tutorial</a>
+    </header>
 
 	<div id="content" class="demo-content">
+		<h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit..</h1>
 
-		<h1>Lorem ipsum dolor sit amet consectetur.</h1>
-
-		<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Nullam mollis. Ut justo. Suspendisse potenti.</p>
-
-		<p>Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est. Sed lectus. Praesent elementum hendrerit tortor. Sed semper lorem at felis. Vestibulum volutpat, lacus a ultrices sagittis, mi neque euismod dui, eu pulvinar nunc sapien ornare nisl. Phasellus pede arcu, dapibus eu, fermentum et, dapibus sed, urna.</p>
+		<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi.</p>
 
 		<figure>
-			<img src="img/img-large-1.jpeg" height="auto" width="600" alt="">
+			<img src="img/img-large-1.jpeg" 
+				 width="1280"
+				 height="854"
+				 alt="">
+			<canvas></canvas>
+			<figcaption>Lorem ipsum dolor sit amet.</figcaption>
 		</figure>
 
-		<h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h2>
-
-		<p>Morbi interdum mollis sapien. Sed ac risus. Phasellus lacinia, magna a ullamcorper laoreet, lectus arcu pulvinar risus, vitae facilisis libero dolor a purus. Sed vel lacus. Mauris nibh felis, adipiscing varius, adipiscing in, lacinia vel, tellus. Suspendisse ac urna. Etiam pellentesque mauris ut lectus. Nunc tellus ante, mattis eget, gravida vitae, ultricies ac, leo. Integer leo pede, ornare a, lacinia eu, vulputate vel, nisl.</p>
+		<p>Morbi interdum mollis sapien. Sed ac risus. Phasellus lacinia, magna a ullamcorper laoreet, lectus arcu pulvinar risus, vitae facilisis libero dolor a purus. Sed vel lacus. Mauris nibh felis, adipiscing varius, adipiscing in, lacinia vel, tellus. Suspendisse ac urna. Etiam pellentesque mauris ut lectus. Nunc tellus ante, mattis eget, gravida vitae, ultricies ac, leo.</p>
 
 		<figure>
-			<img src="img/img-large-2.jpeg" height="auto" width="600" alt="">
-		</figure>
-
-		<h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h2>
-
-		<p>Morbi interdum mollis sapien. Sed ac risus. Phasellus lacinia, magna a ullamcorper laoreet, lectus arcu pulvinar risus, vitae facilisis libero dolor a purus. Sed vel lacus. Mauris nibh felis, adipiscing varius, adipiscing in, lacinia vel, tellus. Suspendisse ac urna. Etiam pellentesque mauris ut lectus. Nunc tellus ante, mattis eget, gravida vitae, ultricies ac, leo. Integer leo pede, ornare a, lacinia eu, vulputate vel, nisl.</p>
-
-		<figure>
-			<img src="img/img-large-3.jpeg" height="auto" width="600" alt="">
-		</figure>
-
-		<h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h2>
-
-		<p>Morbi interdum mollis sapien. Sed ac risus. Phasellus lacinia, magna a ullamcorper laoreet, lectus arcu pulvinar risus, vitae facilisis libero dolor a purus. Sed vel lacus. Mauris nibh felis, adipiscing varius, adipiscing in, lacinia vel, tellus. Suspendisse ac urna. Etiam pellentesque mauris ut lectus. Nunc tellus ante, mattis eget, gravida vitae, ultricies ac, leo. Integer leo pede, ornare a, lacinia eu, vulputate vel, nisl.</p>
-
-		<figure>
-			<img src="img/img-large-4.jpeg" height="auto" width="600" alt="">
-		</figure>
-
-		<h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h2>
-
-		<p>Morbi interdum mollis sapien. Sed ac risus. Phasellus lacinia, magna a ullamcorper laoreet, lectus arcu pulvinar risus, vitae facilisis libero dolor a purus. Sed vel lacus. Mauris nibh felis, adipiscing varius, adipiscing in, lacinia vel, tellus. Suspendisse ac urna. Etiam pellentesque mauris ut lectus. Nunc tellus ante, mattis eget, gravida vitae, ultricies ac, leo. Integer leo pede, ornare a, lacinia eu, vulputate vel, nisl.</p>
-
-		<figure>
-			<img src="img/img-large-5.jpeg" height="auto" width="600" alt="">
+			<img src="img/img-large-2.jpeg"
+				 width="1280"
+				 height="853"
+				 alt="">
+			<canvas></canvas>
+			<figcaption>Lorem ipsum dolor sit amet.</figcaption>
 		</figure>
 	
-		<h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h2>
+		<h2>Lorem ipsum dolor sit amet consectetur elit.</h2>
+
+		<p>Morbi interdum mollis sapien. Sed ac risus. Phasellus lacinia, magna a ullamcorper laoreet, lectus arcu pulvinar risus, vitae facilisis libero dolor a purus. Sed vel lacus. Mauris nibh felis, adipiscing varius, adipiscing in, lacinia vel, tellus.</p>
+
+		<figure>
+			<img src="img/img-large-3.jpeg" 
+				 width="1280"
+				 height="853"  
+				 alt="">
+			<canvas></canvas>
+			<figcaption>Lorem ipsum dolor sit amet.</figcaption>
+		</figure>
+
+		<h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam, cumque!</h2>
 
 		<p>Morbi interdum mollis sapien. Sed ac risus. Phasellus lacinia, magna a ullamcorper laoreet, lectus arcu pulvinar risus, vitae facilisis libero dolor a purus. Sed vel lacus. Mauris nibh felis, adipiscing varius, adipiscing in, lacinia vel, tellus. Suspendisse ac urna. Etiam pellentesque mauris ut lectus. Nunc tellus ante, mattis eget, gravida vitae, ultricies ac, leo. Integer leo pede, ornare a, lacinia eu, vulputate vel, nisl.</p>
 
 		<figure>
-			<img src="img/img-large-6.jpeg" height="auto" width="600" alt="">
+			<img src="img/img-large-4.jpeg"
+				 width="1280"
+				 height="853"
+				 alt="">
+			<canvas></canvas>
+			<figcaption>Lorem ipsum dolor sit amet.</figcaption>
 		</figure>
-		
-	</div>
 
+		<h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet.</h2>
+
+		<p>Morbi interdum mollis sapien. Sed ac risus. Phasellus lacinia, magna a ullamcorper laoreet, lectus arcu pulvinar risus, vitae facilisis libero dolor a purus. Sed vel lacus. Mauris nibh felis, adipiscing varius, adipiscing in, lacinia vel, tellus. Suspendisse ac urna. Etiam pellentesque mauris ut lectus. Nunc tellus ante, mattis eget, gravida vitae, ultricies ac, leo. Integer leo pede, ornare a, lacinia eu, vulputate vel, nisl.</p>
+
+		<figure>
+			<img src="img/img-large-5.jpeg"
+				 width="1280"
+				 height="853"
+				 alt="">
+			<canvas></canvas>
+			<figcaption>Lorem ipsum dolor sit amet.</figcaption>
+		</figure>
+
+		<p>Morbi interdum mollis sapien. Sed ac risus. Phasellus lacinia, magna a ullamcorper laoreet, lectus arcu pulvinar risus, vitae facilisis libero dolor a purus. Sed vel lacus.</p>
+
+		<figure>
+			<img src="img/img-large-6.jpeg"
+				 width="1280"
+				 height="853"
+				 alt="">
+			<canvas></canvas>
+			<figcaption>Lorem ipsum dolor sit amet.</figcaption>
+		</figure>
+
+		<p>Mauris nibh felis, adipiscing varius, adipiscing in, lacinia vel, tellus. Suspendisse ac urna. Etiam pellentesque mauris ut lectus. Nunc tellus ante, mattis eget, gravida vitae, ultricies ac, leo. Integer leo pede, ornare a, lacinia eu, vulputate vel, nisl.</p>
+	</div>
 </body>
 </html>

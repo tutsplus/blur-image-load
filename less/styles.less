@@ -1,0 +1,115 @@
+@import '_header';
+
+@font-face {
+    font-family: 'Redacted-regular';
+    src: url('font/redacted-regular.eot');
+    src: url('font/redacted-regular.eot?#iefix') format('embedded-opentype'),
+         url('font/redacted-regular.woff2') format('woff2'),
+         url('font/redacted-regular.woff') format('woff'),
+         url('font/redacted-regular.ttf') format('truetype'),
+         url('font/redacted-regular.svg#redactedregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'RedactedScript-regular';
+    src: url('font/redacted-script-regular.eot');
+    src: url('font/redacted-script-regular.eot?#iefix') format('embedded-opentype'),
+         url('font/redacted-script-regular.woff2') format('woff2'),
+         url('font/redacted-script-regular.woff') format('woff'),
+         url('font/redacted-script-regular.ttf') format('truetype'),
+         url('font/redacted-script-regular.svg#redacted_scriptregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+h1 {
+	font-size: 48px;
+	line-height: 1.68;
+}
+h2 {
+	font-size: 31px;
+}
+img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+}
+p {
+	font-size: 24px;
+	margin-bottom: 30px;
+	line-height: 1.68;
+	color: #555;
+}
+figure {
+	margin: 0;
+	position: relative;
+	margin-bottom: 30px;
+}
+figcaption {
+	color: #999;
+	margin-top: 10px;
+	font-size: 16px;
+}
+figure canvas {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100% !important;
+	height: auto !important;
+	opacity: 0;
+}
+
+.demo-content {
+	width: 600px;
+	margin-right: auto;
+	margin-left: auto;
+	font-family: 'RedactedScript-regular', Georgia, Times, "Times New Roman", serif;
+	font-size: 24px;
+	line-height: 1.4
+}
+.demo-content h1,
+.demo-content h2 {
+	font-family: 'Redacted-regular', Verdana, Geneva, sans-serif;
+	line-height: 1.68;
+}
+.img-small {
+	width: 100% !important;
+	visibility: hidden;
+}
+.img-blur {
+	opacity: 1;
+	-webkit-animation: fadeIn .8s ease-in-out forwards;
+	-moz-animation: fadeIn .8s ease-in-out forwards;
+	animation: fadeIn .8s ease-in-out forwards;
+}
+.img-large {
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	-webkit-animation-delay: .6s;
+	-moz-animation-delay: .6s;
+    animation-delay: .6s;
+}
+.is-visible {
+	-webkit-animation: fadeIn .8s ease-in-out forwards;
+	-moz-animation: fadeIn .8s ease-in-out forwards;
+	animation: fadeIn .8s ease-in-out forwards;
+}
+
+@-webkit-keyframes fadeIn {
+    100% { opacity: 1; }
+}
