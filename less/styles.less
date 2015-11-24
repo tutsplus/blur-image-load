@@ -89,26 +89,21 @@ html {
 	width: 100% !important;
 	visibility: hidden;
 }
-.demo-content .img-blur {
-	opacity: 1;
-	-webkit-animation: fadeIn .8s ease-in-out forwards;
-	-moz-animation: fadeIn .8s ease-in-out forwards;
-	animation: fadeIn .8s ease-in-out forwards;
-}
 .demo-content .img-large {
 	position: absolute;
 	top: 0;
 	left: 0;
 	opacity: 0;
-	-webkit-animation-delay: .6s;
-	-moz-animation-delay: .6s;
-    animation-delay: .6s;
 }
-.demo-content .is-visible {
-	-webkit-animation: fadeIn .8s ease-in-out forwards;
-	-moz-animation: fadeIn .8s ease-in-out forwards;
+.demo-content .fade-out {
+	animation: fadeOut .8s ease-in-out forwards;
+}
+.demo-content .fade-in {
 	animation: fadeIn .8s ease-in-out forwards;
 }
-@-webkit-keyframes fadeIn {
+@keyframes fadeOut {
+	100% { opacity: 0; }
+}
+@keyframes fadeIn {
 	100% { opacity: 1; }
 }

@@ -1,5 +1,31 @@
 (function($, blur) {
 
+	function loadLargeImage( imgSmall ) {
+
+		// Now, let's create a new image for the large image.
+		var largeWidth  = $( imgSmall ).data( 'large-width' ),
+			largeHeight = $( imgSmall ).data( 'large-height' ),
+			imgLarge    = $( new Image( largeWidth, largeHeight ) );
+
+			imgLarge
+				.attr({ // Assign attributes to the large image.
+					'src'   : $( imgSmall ).data( 'large' ), // Set the image source.
+					'class' : 'img-large',
+					'alt'   : ''
+				})
+				.on( 'load', function() { // Once the image is loaded.
+					// Insert the large image after the <canvas> element.
+					$( this )
+						.insertAfter( $( imgSmall ).siblings( '.img-blur' ) )
+						.addClass( function() {
+							if ( ! $( this ).hasClass( 'fade-in' ) ) {
+								return 'fade-in';
+							}
+						} );
+				});
+
+	}
+
 	$( '#content' )
 		.imagesLoaded()
 		.progress( function( instance, image ) { // Triggered after each small image has been loaded.
@@ -17,49 +43,33 @@
 			blur.image( imgSmall, canvasElem, 6 );
 
 			// Additionally add class to the canvas element.
-			$( canvasElem ).addClass( 'img-blur is-blurred' );
+			$( canvasElem ).addClass( 'img-blur fade-in' );
 
-			// Now, let's create a new image for the large image.
-			var largeWidth  = $( imgSmall ).data( 'large-width' ),
-				largeHeight = $( imgSmall ).data( 'large-height' ),
-				imgLarge    = $( new Image( largeWidth, largeHeight ) );
+			if ( $( canvasElem ).visible( true ) ) {
+				loadLargeImage( imgSmall );
+			}
 
-			imgLarge
-				.attr({ // Assign attributes to the large image.
-					'src'    : $( imgSmall ).data( 'large' ), // Set the image source.
-					'class'  : 'img-large',
-					'alt'    : ''
-				})
-				.on( 'load', function() { // Once the image is loaded.
+		}).done( function( instance ) {
 
-					var thisImg    = $( this ),
-						figureElem = $( imgSmall.parentElement );
+			var images = instance.images;
 
-					// Insert the large image after the <canvas> element.
-					thisImg
-						.insertAfter( canvasElem )
-						.addClass( function() { 
+			$.each( images, function( index, image ) {
+				$( window ).on( 'scroll', function() {		
+					
+					var imgSmall = image.img,
+				
+					if ( 0 !== $( imgSmall ).siblings( 'img-large' ).length ) {
+						return;
+					}
 
-							/**
-							 * Assign class names.
-							 * 
-							 * If the image is visible in the viewport,
-							 * add the 'is-visible' class to apply the fadeIn transition.
-							 * Otherwise, just add 'is-loaded' and hold the transition later.
-							 */
-							var className = ( $( figureElem ).visible( true ) ) ? 'is-loaded is-visible' : 'is-loaded';
+					var canvasElem = imgSmall.nextElementSibling;
 
-							return className;
-
-						});
-
-						// Let's check the image visibility again with the user scroll.
-						$( window ).on( 'scroll', function() {
-							if ( thisImg.visible( true ) ) {
-								thisImg.addClass( 'is-visible' );
-							}
-						});
+					if ( $( canvasElem ).visible( true ) ) {
+						loadLargeImage( imgSmall );
+					}
+				});
 			});
-	});
+			
+		});
 
 })(jQuery, window.StackBlur);
