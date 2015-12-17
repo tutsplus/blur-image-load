@@ -15,7 +15,7 @@
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 530843,
+		"initialSize": 268187,
 		"inputAbbreviatedPath": "\/img\/img-large-1.jpeg",
 		"outputAbbreviatedPath": "\/img\/img-large-1.jpeg",
 		"outputPathIsOutsideProject": 0,
@@ -77,6 +77,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 1
 		},
+	"\/img\/img-large-8.jpeg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 290600,
+		"inputAbbreviatedPath": "\/img\/img-large-8.jpeg",
+		"outputAbbreviatedPath": "\/img\/img-large-8.jpeg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 1
+		},
 	"\/img\/img-small-1.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -86,7 +97,7 @@
 		"outputAbbreviatedPath": "\/img\/img-small-1.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"processed": 0
+		"processed": 1
 		},
 	"\/img\/img-small-2.jpg": {
 		"fileType": 16384,
@@ -97,7 +108,7 @@
 		"outputAbbreviatedPath": "\/img\/img-small-2.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"processed": 0
+		"processed": 1
 		},
 	"\/img\/img-small-3.jpg": {
 		"fileType": 16384,
@@ -108,7 +119,7 @@
 		"outputAbbreviatedPath": "\/img\/img-small-3.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"processed": 0
+		"processed": 1
 		},
 	"\/img\/img-small-4.jpg": {
 		"fileType": 16384,
@@ -119,7 +130,7 @@
 		"outputAbbreviatedPath": "\/img\/img-small-4.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"processed": 0
+		"processed": 1
 		},
 	"\/img\/img-small-5.jpg": {
 		"fileType": 16384,
@@ -130,7 +141,7 @@
 		"outputAbbreviatedPath": "\/img\/img-small-5.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"processed": 0
+		"processed": 1
 		},
 	"\/img\/img-small-6.jpg": {
 		"fileType": 16384,
@@ -141,7 +152,18 @@
 		"outputAbbreviatedPath": "\/img\/img-small-6.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"processed": 0
+		"processed": 1
+		},
+	"\/img\/img-small-8.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1102,
+		"inputAbbreviatedPath": "\/img\/img-small-8.jpg",
+		"outputAbbreviatedPath": "\/img\/img-small-8.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 1
 		},
 	"\/index.html": {
 		"fileType": 8192,

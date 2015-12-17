@@ -1,6 +1,6 @@
 (function($, blur) {
 
-	function loadLargeImage( imgSmall ) {
+	function loadLargeImage( imgSmall, insertAfterElem ) {
 
 		// Now, let's create a new image for the large image.
 		var largeWidth  = $( imgSmall ).data( 'large-width' ),
@@ -16,7 +16,7 @@
 				.on( 'load', function() { // Once the image is loaded.
 					// Insert the large image after the <canvas> element.
 					$( this )
-						.insertAfter( $( imgSmall ).siblings( '.img-blur' ) )
+						.insertAfter( insertAfterElem )
 						.addClass( function() {
 							if ( ! $( this ).hasClass( 'fade-in' ) ) {
 								return 'fade-in';
@@ -46,7 +46,7 @@
 			$( canvasElem ).addClass( 'img-blur fade-in' );
 
 			if ( $( canvasElem ).visible( true ) ) {
-				loadLargeImage( imgSmall );
+				loadLargeImage( imgSmall, canvasElem );
 			}
 
 		}).done( function( instance ) {
@@ -54,19 +54,19 @@
 			var images = instance.images;
 
 			$.each( images, function( index, image ) {
-				$( window ).on( 'scroll', function() {		
+				$( window ).on( 'scroll', function() {
 					
-					var imgSmall = image.img,
+					var imgSmall = image.img;
 				
-					if ( 0 !== $( imgSmall ).siblings( 'img-large' ).length ) {
-						return;
+					if ( 0 === $( imgSmall ).siblings( '.img-large' ).length ) {
+
+						var canvasElem = imgSmall.nextElementSibling;
+
+						if ( $( canvasElem ).visible( true ) ) {
+							loadLargeImage( imgSmall, canvasElem );
+						}	
 					}
 
-					var canvasElem = imgSmall.nextElementSibling;
-
-					if ( $( canvasElem ).visible( true ) ) {
-						loadLargeImage( imgSmall );
-					}
 				});
 			});
 			
