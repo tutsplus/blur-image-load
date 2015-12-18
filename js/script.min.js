@@ -27,36 +27,33 @@
 		return func ? this.on( evt || 'resize', debounce( func, threshold ) ) : false;
 	};
 
-	$.fn.lazy = function( image ) {
+	$.fn.beinglazy = function( image ) {
 
-		var	self  = this;
-			image = $( image );
+		var	figure = this, width, height;
 
-		if ( self.is( '.is-visible' ) ) {
+		if ( figure.is( '.is-visible' || '.is-loaded' ) ) {
 			return;
-		}		
+		}
 
-		if ( self.visible( true ) ) {
-			
-			self.addClass( 'is-visible' );
+		if ( figure.visible( true ) ) {
+		
+			figure.addClass( 'is-visible' );
 
-			var width  = image.data( 'large-width' );
-			var	height = image.data( 'large-height' );
-			var	imgNew = $( new Image( width, height ) );
+			image  = $( image );
+			width  = image.data( 'large-width' );
+			height = image.data( 'large-height' );
 
-			imgNew
-				.attr({
+			$( new Image( width, height ) ).attr({
 					'src'   : image.data( 'large' ),
 					'class' : 'img-large',
 					'alt'   : ''
 				})
 				.on( 'load', function() {
-					self.addClass( 'is-loaded' );
+					figure.addClass( 'is-loaded' );
 					image.siblings( 'canvas' )
 						.after( $( this ).addClass( 'fade-in' ) );
 				});
 		}
-
 	};
 
 })( jQuery );
@@ -72,6 +69,7 @@
 				if ( false === image.isLoaded ) {
 					return;
 				}
+				
 				var img    = image.img;
 				var	canvas = image.img.nextElementSibling;
 
@@ -81,25 +79,20 @@
 			})
 			.done( function( instance ) {
 
-				const images = instance.images;
+				const instances = instance.images;
 
-				$.each( images, function( index, image ) {
+				$.each( instances, function( i, value ) {
 
-					$( image.img )
-						.parent( 'figure ')
-						.lazy( image.img );
+					const image  = $( value.img );
+					const figure = image.parent( 'figure ');
+
+					figure.beinglazy( image );
+					
+					$( window ).deb( 'scroll', function() {
+						figure.beinglazy( image );
+					}, 180 );
+
 				});
-
-				$( window ).deb( 'scroll', function() {
-
-					$.each( images, function( index, image ) {
-
-						$( image.img )
-							.parent( 'figure ')
-							.lazy( image.img );
-					});
-
-				}, 240 );
 			});
 
 })( jQuery );
