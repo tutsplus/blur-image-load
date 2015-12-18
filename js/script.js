@@ -1,75 +1,78 @@
-(function($, blur) {
+(function( $ ) {
 
-	function loadLargeImage( imgSmall, insertAfterElem ) {
+	'use strict';
 
-		// Now, let's create a new image for the large image.
-		var largeWidth  = $( imgSmall ).data( 'large-width' ),
-			largeHeight = $( imgSmall ).data( 'large-height' ),
-			imgLarge    = $( new Image( largeWidth, largeHeight ) );
+	var acme = {
+		debounce : function( func, wait, immediate ) {
+			
+			var timeout;
+
+			return function() {
+				var context = this, args = arguments;
+				var later   = function() {
+					timeout = null;
+					if (!immediate) func.apply(context, args);
+				};
+				var callNow = immediate && !timeout;
+
+				clearTimeout(timeout);
+				timeout = setTimeout(later, wait);
+				if (callNow) func.apply(context, args);
+			};
+		},
+		img : function( img, canvas ) {
+
+			var width    = img.data( 'large-width' );
+			var	height   = img.data( 'large-height' );
+			var	imgLarge = $( new Image( width, height ) );
 
 			imgLarge
-				.attr({ // Assign attributes to the large image.
-					'src'   : $( imgSmall ).data( 'large' ), // Set the image source.
-					'class' : 'img-large',
-					'alt'   : ''
-				})
-				.on( 'load', function() { // Once the image is loaded.
-					// Insert the large image after the <canvas> element.
-					$( this )
-						.insertAfter( insertAfterElem )
-						.addClass( function() {
-							if ( ! $( this ).hasClass( 'fade-in' ) ) {
-								return 'fade-in';
-							}
-						} );
-				});
-
-	}
+			.attr({
+				'src'   : img.data( 'large' ),
+				'class' : 'img-large',
+				'alt'   : ''
+			})
+			.on( 'load', function() {
+				img.parent().addClass( 'is-loaded' );
+				canvas.after( $( this ).addClass( 'fade-in' ) );
+			});
+		}
+	};
 
 	$( '#content' )
 		.imagesLoaded()
-		.progress( function( instance, image ) { // Triggered after each small image has been loaded.
+		.progress( function( instance, image ) {
 
-			// Abort early if the image is not loaded.
 			if ( false === image.isLoaded ) {
 				return;
 			}
+			var img    = image.img;
+			var	canvas = image.img.nextElementSibling;
 
-			// Let's get started.
-			var imgSmall   = image.img,
-				canvasElem = imgSmall.nextElementSibling;
-
-			// Blur the image.
-			blur.image( imgSmall, canvasElem, 6 );
-
-			// Additionally add class to the canvas element.
-			$( canvasElem ).addClass( 'img-blur fade-in' );
-
-			if ( $( canvasElem ).visible( true ) ) {
-				loadLargeImage( imgSmall, canvasElem );
-			}
+			window.StackBlur.image( img, canvas, 6 );
+			canvas.classList.add( 'img-blur', 'fade-in' );
 
 		}).done( function( instance ) {
 
-			var images = instance.images;
+			$.each( instance.images, function( index, image ) {
 
-			$.each( images, function( index, image ) {
-				$( window ).on( 'scroll', function() {
-					
-					var imgSmall = image.img;
-				
-					if ( 0 === $( imgSmall ).siblings( '.img-large' ).length ) {
+				var	img    = $( image.img );
+				var	canvas = $( image.img.nextElementSibling );
+				var figure = $( image.img.parentElement );
 
-						var canvasElem = imgSmall.nextElementSibling;
+				if ( figure.visible( true ) ) {
+					figure.addClass( 'is-visible' );
+					acme.img( img, canvas );
+				} else {
+					$( window ).on( 'scroll', acme.debounce( function() {
+						if ( figure.visible( true ) && ! figure.is( '.is-visible' ) ) {
+							figure.addClass( 'is-visible' );
+							acme.img( img, canvas );
+						}
+					}, 300 ));
+				}
 
-						if ( $( canvasElem ).visible( true ) ) {
-							loadLargeImage( imgSmall, canvasElem );
-						}	
-					}
-
-				});
 			});
-			
 		});
 
-})(jQuery, window.StackBlur);
+})( jQuery );
