@@ -174,25 +174,14 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/js\/jquery-1.11.3.min.js": {
-		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/js\/jquery-1.11.3.min.js",
-		"outputAbbreviatedPath": "\/js\/min\/jquery-1.11.3.min.min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
 	"\/js\/lib.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/js\/lib.js",
-		"outputAbbreviatedPath": "\/js\/min\/lib.min.js",
+		"outputAbbreviatedPath": "\/js\/lib.min.js",
 		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
+		"outputPathIsSetByUser": 1,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
@@ -213,6 +202,17 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/js\/lib\/imagesloaded.pkgd.min.js",
 		"outputAbbreviatedPath": "\/js\/lib\/min\/imagesloaded.pkgd.min.min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/js\/lib\/jquery.custom.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
+		"inputAbbreviatedPath": "\/js\/lib\/jquery.custom.js",
+		"outputAbbreviatedPath": "\/js\/lib\/min\/jquery.custom.min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
@@ -243,12 +243,12 @@
 	"\/js\/script.js": {
 		"fileType": 64,
 		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/js\/script.js",
 		"outputAbbreviatedPath": "\/js\/script.min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 1,
-		"outputStyle": 0,
+		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
 	"\/js\/script.min.js": {
@@ -574,7 +574,7 @@
 			"flagValue": -1
 			},
 		"esnext": {
-			"active": 0,
+			"active": 1,
 			"flagValue": -1
 			},
 		"evil": {
@@ -770,7 +770,7 @@
 			"flagValue": -1
 			},
 		"strict": {
-			"active": 0,
+			"active": 1,
 			"flagValue": -1
 			},
 		"sub": {
