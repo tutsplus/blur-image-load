@@ -33,13 +33,13 @@
 
 		var	figure = this, width, height;
 
-		if ( figure.is( '.is-visible' || '.is-loaded' ) ) {
+		if ( figure.is( '.is-seen' || '.is-loaded' ) ) {
 			return;
 		}
 
 		if ( figure.visible( true ) ) {
 
-			figure.addClass( 'is-visible' );
+			figure.addClass( 'is-seen' );
 
 			image  = $( image );
 			width  = image.data( 'large-width' );
